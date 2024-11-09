@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask passord</title>
+</head>
+<body>  
+      <h1>enter your correct password</h1>
+      <H3>YOU are deleting data belongs to <%=data.email%></H3>
+      <form method="post" action="/user/<%=data.id%>?_method=DELETE">
+        <input name="password" placeholder="enter your password">
+        <button>Delete</button>
+      </form>
+
+</body>
+</html>

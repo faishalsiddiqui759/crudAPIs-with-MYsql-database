@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show all users</title>
+    <link rel="stylesheet" href="showsUsers.css">
+</head>
+<body>
+    <h1>Form data</h1>
+   
+    <form method="get" action="/user/add">
+        <button>Add new data</button>
+    </form>
+     
+    <table>
+        |<tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>password</th>
+            <th>edit username</th>
+            <th>delete account</th>
+        </tr>
+        
+        
+        <%for(data of dataAll){%>
+            <tr>
+            <td><%=data.id%></td>
+            <td><%=data.username%></td>
+            <td><%=data.email%></td>
+            <td><%=data.password%></td>
+            <td><form method="get" action="/user/<%=data.id%>/edit">
+              <button>Edit username</button>
+            </form></td>
+            <td>
+                <form method="get" action="/user/delete/<%=data.id%>">
+                    <button>Delete Account</button>
+                </form>
+            </td>  
+            </tr> 
+        <%}%>
+        
+    </table>
+
+</body>
+</html>
